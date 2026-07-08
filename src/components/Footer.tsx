@@ -25,7 +25,7 @@ export function Footer() {
               rel="noreferrer"
               className="relative mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-sm font-semibold uppercase tracking-[0.12em] text-ink transition-opacity hover:opacity-85"
             >
-              Book {model.firstName} on WhatsApp ↗
+              Book {model.firstName} on WhatsApp {"↗︎"}
             </a>
           </div>
         </Reveal>

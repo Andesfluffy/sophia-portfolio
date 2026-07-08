@@ -57,7 +57,9 @@ export function Stats() {
                   <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
                 </span>
                 {trustStrip.right}
-                <span className="text-accent transition-transform group-hover:translate-x-0.5">↗</span>
+                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 text-accent transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <path d="M7 17 17 7M8 7h9v9" />
+                </svg>
               </a>
             </div>
           </div>

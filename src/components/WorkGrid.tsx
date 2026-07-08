@@ -34,8 +34,10 @@ export function WorkGrid() {
                         {work.date}
                       </span>
                     </div>
-                    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-accent/50 text-lg text-accent transition-colors group-hover:bg-accent group-hover:text-ink">
-                      ↗
+                    <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-accent/50 text-accent transition-colors group-hover:bg-accent group-hover:text-ink">
+                      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                        <path d="M7 17 17 7M8 7h9v9" />
+                      </svg>
                     </span>
                   </div>
                 </article>

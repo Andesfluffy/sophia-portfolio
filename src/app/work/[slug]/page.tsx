@@ -150,7 +150,7 @@ export default async function WorkPage({
                 rel="noreferrer"
                 className="order-1 rounded-full bg-accent px-6 py-3 text-center text-[11px] font-semibold uppercase tracking-[0.12em] text-ink transition-opacity hover:opacity-85 sm:order-2"
               >
-                Book {model.firstName} ↗
+                Book {model.firstName} {"↗︎"}
               </a>
             </div>
           </Reveal>
