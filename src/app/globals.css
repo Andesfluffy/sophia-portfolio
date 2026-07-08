@@ -1,26 +1,120 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #0a0908;
+  --card: #131110;
+  --bone: #ece7df;
+  --smoke: #93897c;
+  --accent: #ff2e88;
+  --line: rgba(255, 255, 255, 0.08);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ink: var(--ink);
+  --color-card: var(--card);
+  --color-bone: var(--bone);
+  --color-smoke: var(--smoke);
+  --color-accent: var(--accent);
+  --color-line: var(--line);
+  --font-sans: var(--font-archivo), "Helvetica Neue", sans-serif;
+  --font-script: var(--font-script), cursive;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  /* stop iOS/Android from auto-inflating text in landscape */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--ink);
+  color: var(--bone);
+  font-family: var(--font-archivo), "Helvetica Neue", sans-serif;
+  /* clip (not hidden) contains the blur blobs + rotated pills without
+     turning <body> into a scroll container — keeps the sticky nav working */
+  overflow-x: clip;
+  /* comfortable, tap-friendly line spacing on small screens */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* never let a stray wide element force a horizontal scrollbar on phones */
+html,
+body {
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--ink);
+}
+
+/* film-grain overlay, applied by <Grain /> in page.tsx */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* warm smoke blobs — position with utility classes */
+.glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(110px);
+  pointer-events: none;
+}
+
+/* marquee section-title strips */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* custom cursor dot — hidden on touch devices */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: var(--accent);
+  pointer-events: none;
+  mix-blend-mode: difference;
+  transition: width 0.25s ease, height 0.25s ease;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-dot.is-hovering {
+  width: 48px;
+  height: 48px;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot {
+    display: none;
+  }
 }
