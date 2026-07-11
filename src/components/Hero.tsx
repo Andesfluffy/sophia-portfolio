@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
-import { heroImage, model, socials } from "@/lib/data";
-import { SocialIcon } from "./SocialIcon";
+import { heroImage, model } from "@/lib/data";
 
 export function Hero() {
   return (
@@ -57,25 +56,6 @@ export function Hero() {
           </p>
         </motion.div>
 
-        <motion.div
-          className="mt-8 flex items-center gap-3"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.8 }}
-        >
-          {socials.map((s) => (
-            <a
-              key={s.label}
-              href={s.href}
-              target={s.href.startsWith("http") ? "_blank" : undefined}
-              rel="noreferrer"
-              aria-label={s.label}
-              className="grid h-10 w-10 place-items-center rounded-full border border-line bg-card text-bone/70 transition-colors hover:border-accent hover:text-accent"
-            >
-              <SocialIcon name={s.icon} className="h-4.5 w-4.5" />
-            </a>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

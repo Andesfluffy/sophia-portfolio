@@ -3,20 +3,10 @@ export const model = {
   fullName: "Sophia Adaife Chukwudinma",
   firstName: "Sophia",
   role: "Model · Dancer · Actor",
-  availability: "Available for bookings",
   location: "Delhi, India",
   intro:
     "Model, dancer and actor with over two years in the industry — face, e-commerce, editorial, creative, fashion, glamour and bold-concept work.",
-  instagram: "https://www.instagram.com/thatgirlmellow",
-  whatsapp: "https://wa.me/917085926689",
 };
-
-export type Social = { label: string; icon: "instagram" | "x" | "whatsapp"; href: string };
-
-export const socials: Social[] = [
-  { label: "Instagram", icon: "instagram", href: model.instagram },
-  { label: "WhatsApp", icon: "whatsapp", href: model.whatsapp },
-];
 
 /** Sophia's hero portrait — studio shot, in /public/photos */
 export const heroImage = "/photos/hero-studio.jpg";
@@ -39,7 +29,6 @@ export const statSpecs: { label: string; value: string }[] = [
 
 export const trustStrip = {
   left: "Model · Dancer · Actor — brands, editorial and film",
-  right: "Ready for bookings",
 };
 
 export type Work = {
@@ -157,8 +146,8 @@ export const pressRows: PressRow[] = [
   { title: "Dance", detail: "Trained performer — stage and commercial", pill: "Performer" },
 ];
 
-/** Booking channels by discipline — all reach Sophia on WhatsApp */
-export const bookings: { title: string; desc: string }[] = [
+/** Sophia's disciplines — shown as informational cards */
+export const disciplines: { title: string; desc: string }[] = [
   {
     title: "Modeling",
     desc: "Face · e-commerce · editorial · fashion · glamour · bold concept",

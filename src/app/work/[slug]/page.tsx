@@ -131,27 +131,15 @@ export default async function WorkPage({
           </div>
 
           <Reveal delay={0.1}>
-            <div className="mt-16 flex flex-col gap-5 rounded-3xl border border-line bg-card p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
-              <div className="order-2 flex items-center justify-between gap-4 sm:contents">
-                <Link href={`/work/${prev.slug}`} className="group text-left sm:order-1">
-                  <p className="text-[11px] uppercase tracking-[0.15em] text-smoke">← Previous</p>
-                  <p className="mt-1 font-semibold transition-colors group-hover:text-accent">{prev.title}</p>
-                </Link>
-                <Link href={`/work/${next.slug}`} className="group text-right sm:order-3">
-                  <p className="text-[11px] uppercase tracking-[0.15em] text-smoke">Next →</p>
-                  <p className="mt-1 font-semibold transition-colors group-hover:text-accent">{next.title}</p>
-                </Link>
-              </div>
-              <a
-                href={`${model.whatsapp}?text=${encodeURIComponent(
-                  `Hi ${model.firstName}, I'd like to book you for a project.`
-                )}`}
-                target="_blank"
-                rel="noreferrer"
-                className="order-1 rounded-full bg-accent px-6 py-3 text-center text-[11px] font-semibold uppercase tracking-[0.12em] text-ink transition-opacity hover:opacity-85 sm:order-2"
-              >
-                Book {model.firstName} {"↗︎"}
-              </a>
+            <div className="mt-16 flex items-center justify-between gap-4 rounded-3xl border border-line bg-card p-5 sm:p-6">
+              <Link href={`/work/${prev.slug}`} className="group text-left">
+                <p className="text-[11px] uppercase tracking-[0.15em] text-smoke">← Previous</p>
+                <p className="mt-1 font-semibold transition-colors group-hover:text-accent">{prev.title}</p>
+              </Link>
+              <Link href={`/work/${next.slug}`} className="group text-right">
+                <p className="text-[11px] uppercase tracking-[0.15em] text-smoke">Next →</p>
+                <p className="mt-1 font-semibold transition-colors group-hover:text-accent">{next.title}</p>
+              </Link>
             </div>
           </Reveal>
         </div>

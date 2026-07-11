@@ -23,11 +23,6 @@ const items = [
     label: "Experience",
     d: "M5 4h11v16H5V4Zm11 4h3v12h-14M8 8h5M8 12h5M8 16h5",
   },
-  {
-    id: "contact",
-    label: "Contact",
-    d: "M3 6h18v12H3V6Zm0 1 9 6.5L21 7",
-  },
 ];
 
 export function Dock() {

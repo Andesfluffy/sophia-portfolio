@@ -13,17 +13,6 @@ export function Nav() {
           </span>
         </a>
 
-        <a
-          href="#contact"
-          className="hidden items-center gap-2 rounded-full border border-line bg-card px-4 py-2 text-[11px] uppercase tracking-[0.15em] text-bone/80 transition-colors hover:-translate-y-px hover:border-accent/60 hover:text-bone sm:flex"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-          </span>
-          {model.availability}
-        </a>
-
         <p className="text-right text-[11px] uppercase leading-tight tracking-[0.15em] text-smoke">
           {model.location.split(", ")[0]}
           <br className="sm:hidden" />
